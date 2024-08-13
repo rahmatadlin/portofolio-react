@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useStore from '../store/store'; // Adjust the path if needed
 
-
 const services = [
   {
     id: 1,
@@ -36,7 +35,7 @@ const services = [
 ];
 
 const Service = () => {
-  const { theme } = useStore(); // Access the theme from Zustand
+  const { isDarkMode } = useStore(); // Access the theme from Zustand
   const [expandedServiceId, setExpandedServiceId] = useState(null);
 
   const handleReadMoreClick = (id) => {
@@ -45,7 +44,7 @@ const Service = () => {
 
   return (
     <div
-      className={`py-20 ${theme === "dark" ? "bg-black text-white" : "bg-white text-black"}`}
+      className={`py-20 ${isDarkMode ? "bg-black text-white" : "bg-white text-black"}`}
       id="service"
     >
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
@@ -54,13 +53,13 @@ const Service = () => {
           {services.map((service) => (
             <div
               key={service.id}
-              className={`bg-gray-800 px-6 pb-6 rounded-lg hover:shadow-lg transform transition-transform duration-300 ${
+              className={`px-6 pb-6 rounded-lg hover:shadow-lg transform transition-transform duration-300 ${
                 expandedServiceId === service.id ? "h-auto" : "h-40"
-              } ${theme === "dark" ? "bg-gray-800" : "bg-gray-200"}`}
+              } ${isDarkMode ? "bg-gray-800" : "bg-gray-200"}`}
             >
               <div
                 className={`text-right text-2xl font-bold text-transparent bg-clip-text ${
-                  theme === "dark"
+                  isDarkMode
                     ? "bg-gradient-to-r from-green-600 to-blue-400"
                     : "bg-gradient-to-r from-green-400 to-blue-500"
                 }`}
@@ -69,7 +68,7 @@ const Service = () => {
               </div>
               <h3
                 className={`mt-2 text-2xl font-bold text-transparent bg-clip-text ${
-                  theme === "dark"
+                  isDarkMode
                     ? "bg-gradient-to-r from-green-400 to-blue-500"
                     : "bg-gradient-to-r from-green-600 to-blue-400"
                 }`}
@@ -78,7 +77,7 @@ const Service = () => {
               </h3>
               <p
                 className={`mt-2 ${expandedServiceId === service.id ? "block" : "hidden"} ${
-                  theme === "dark" ? "text-gray-300" : "text-gray-800"
+                  isDarkMode ? "text-gray-300" : "text-gray-800"
                 }`}
               >
                 {service.description}
@@ -90,7 +89,7 @@ const Service = () => {
                   handleReadMoreClick(service.id);
                 }}
                 className={`mt-4 inline-block cursor-pointer ${
-                  theme === "dark"
+                  isDarkMode
                     ? "text-green-400 hover:text-blue-500"
                     : "text-green-600 hover:text-blue-700"
                 }`}

@@ -1,5 +1,5 @@
 import React from "react";
-import useStore from '../store/store'; // Adjust the path if neededdjust the path as necessary
+import useStore from '../store/store'; // Adjust the path if needed
 import employeeMSImage from "../assets/employee-ms.png";
 import pintaraiImage from "../assets/pintar-ai.png";
 import onlineStoreImage from "../assets/online-store.png";
@@ -29,11 +29,11 @@ const projects = [
 ];
 
 const Projects = () => {
-  const { theme } = useStore(); // Access the theme from Zustand
+  const { isDarkMode } = useStore(); // Access the theme from Zustand
 
   return (
     <div
-      className={`py-20 ${theme === "dark" ? "bg-black text-white" : "bg-white text-black"}`}
+      className={`py-20 ${isDarkMode ? "bg-black text-white" : "bg-white text-black"}`}
       id="project"
     >
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
@@ -43,7 +43,7 @@ const Projects = () => {
             <div
               key={project.id}
               className={`p-6 rounded-lg hover:shadow-lg transform transition-transform duration-300 hover:scale-105 ${
-                theme === "dark" ? "bg-gray-800" : "bg-gray-200"
+                isDarkMode ? "bg-gray-800" : "bg-gray-200"
               }`}
             >
               <img
@@ -53,14 +53,14 @@ const Projects = () => {
               />
               <h3
                 className={`text-2xl font-bold mb-2 ${
-                  theme === "dark" ? "text-white" : "text-black"
+                  isDarkMode ? "text-white" : "text-black"
                 }`}
               >
                 {project.name}
               </h3>
               <p
                 className={`text-gray-400 mb-4 ${
-                  theme === "dark" ? "text-gray-400" : "text-gray-600"
+                  isDarkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 {project.technologies}
@@ -68,7 +68,7 @@ const Projects = () => {
               <a
                 href={project.github}
                 className={`inline-block bg-gradient-to-r ${
-                  theme === "dark"
+                  isDarkMode
                     ? "from-green-400 to-blue-500"
                     : "from-green-500 to-blue-600"
                 } text-white px-4 py-2 rounded-full`}
