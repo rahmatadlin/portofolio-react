@@ -14,10 +14,10 @@ const About = () => {
           />
           <div className="flex-1">
             <p className="text-lg mb-8">
-              I am a passionate full-stack developer with a focus on building
-              modern and responsive web applications. With a strong foundation
-              in both frontend and backend technologies, I strive to create
-              seamless and efficient user experiences.
+              I am a dedicated full-stack developer, crafting intuitive and
+              dynamic web applications with a keen eye for both frontend and
+              backend innovation. My goal is to deliver smooth, high-performance
+              user experiences that resonate across all platforms.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
@@ -55,27 +55,33 @@ const About = () => {
               </div>
             </div>
             <div className="mt-12 flex justify-between text-center">
-                <div>
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text 
-                bg-gradient-to-r from-green-400 to-blue-500">
-                        1+
-                    </h3>
-                    <p>Years Experience</p>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text 
-                bg-gradient-to-r from-green-400 to-blue-500">
-                        10+
-                    </h3>
-                    <p>Projects Completed</p>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text 
-                bg-gradient-to-r from-green-400 to-blue-500">
-                        2+
-                    </h3>
-                    <p>Happy Clients</p>
-                </div>
+              <div>
+                <h3
+                  className="text-2xl font-bold text-transparent bg-clip-text 
+                bg-gradient-to-r from-green-400 to-blue-500"
+                >
+                  1+
+                </h3>
+                <p>Years Experience</p>
+              </div>
+              <div>
+                <h3
+                  className="text-2xl font-bold text-transparent bg-clip-text 
+                bg-gradient-to-r from-green-400 to-blue-500"
+                >
+                  10+
+                </h3>
+                <p>Projects Completed</p>
+              </div>
+              <div>
+                <h3
+                  className="text-2xl font-bold text-transparent bg-clip-text 
+                bg-gradient-to-r from-green-400 to-blue-500"
+                >
+                  2+
+                </h3>
+                <p>Happy Clients</p>
+              </div>
             </div>
           </div>
         </div>
