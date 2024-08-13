@@ -1,6 +1,8 @@
 import React from "react";
 import employeeMSImage from "../assets/employee-ms.png";
-import bookMSImage from "../assets/admin-dashboard.png";
+import pintaraiImage from "../assets/pintar-ai.png"
+import onlineStoreImage from "../assets/online-store.png"
+
 
 const projects = [
   {
@@ -12,17 +14,17 @@ const projects = [
   },
   {
     id: 2,
-    name: "Blog App",
-    technologies: "MERN Stack",
-    image: bookMSImage,
-    github: "https://github.com/YouafKhan1",
+    name: "Online Store + Admin",
+    technologies: "Next JS, Typescript, Prisma ORM, Tailwind CSS",
+    image: onlineStoreImage,
+    github: "https://github.com/rahmatadlin/online-store-nextjs",
   },
   {
     id: 3,
-    name: "Book MS",
-    technologies: "MERN Stack",
-    image: employeeMSImage,
-    github: "https://github.com/YouafKhan1",
+    name: "Pintar AI",
+    technologies: "Next JS, Typescript, Prisma ORM, Tailwind CSS ",
+    image: pintaraiImage,
+    github: "https://github.com/rahmatadlin/Pintar-AI",
   },
 ];
 

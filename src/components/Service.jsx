@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const services = [
   {
@@ -32,7 +32,14 @@ const services = [
     description: "Promote your business with our digital marketing team.",
   },
 ];
+
 const Service = () => {
+  const [expandedServiceId, setExpandedServiceId] = useState(null);
+
+  const handleReadMoreClick = (id) => {
+    setExpandedServiceId(expandedServiceId === id ? null : id);
+  };
+
   return (
     <div className="bg-black text-white py-20" id="service">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
@@ -41,8 +48,9 @@ const Service = () => {
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-gray-800 px-6 pb-6 rounded-lg hover:shadow-lg transform 
-              transition-transform duration-300 hover:scale-105"
+              className={`bg-gray-800 px-6 pb-6 rounded-lg hover:shadow-lg transform transition-transform duration-300 ${
+                expandedServiceId === service.id ? "h-auto" : "h-40"
+              }`}
             >
               <div
                 className="text-right text-2xl font-bold text-transparent bg-clip-text 
@@ -54,8 +62,19 @@ const Service = () => {
               bg-gradient-to-r from-green-400 to-blue-500">
                 {service.title}
               </h3>
-              <p className="mt-2 text-gray-300">{service.description}</p>
-              <a href="#" className="mt-4 inline-block text-green-400 hover:text-blue-500">Read More</a>
+              <p className={`mt-2 text-gray-300 ${expandedServiceId === service.id ? "block" : "hidden"}`}>
+                {service.description}
+              </p>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleReadMoreClick(service.id);
+                }}
+                className="mt-4 inline-block text-green-400 hover:text-blue-500 cursor-pointer"
+              >
+                {expandedServiceId === service.id ? "Show Less" : "Read More"}
+              </a>
             </div>
           ))}
         </div>
